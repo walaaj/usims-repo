@@ -14,7 +14,7 @@
 .font-bold{font-family: 'Rubik', sans-serif; font-weight: 600;}
 
 .font-10{font-size: 0.625rem;}
-.font-12{font-size: 0.75rem;}
+.font-12{font-size: 0.75rem !important;}
 .font-14{font-size: 0.875rem;}
 .font-16{font-size: 1rem;}
 .font-18{font-size: 1.125rem;}
@@ -29,6 +29,7 @@
 .font-48{font-size: 3rem;}
 .font-60{font-size: 3.75rem;}
 .font-72{font-size: 4.5rem;}
+.font-80{font-size: 5rem;}
 .font-100{font-size: 5.25rem;}
 
 
@@ -102,20 +103,20 @@ $black: #000;
 h1{
     @extend.font-bold;
     color: $white;
-    @extend.font-60;
+    @extend.font-80;
     text-transform: uppercase;
     margin-bottom: 40px;
     line-height: 40px;
     span{
-        @extend.font-14;
+        @extend.font-18;
         @extend.font-regular;
         letter-spacing: 2px;
     }
 }
 h2{
     @extend.font-bold;
-    @extend.font-48;
-    width: 17%;
+    @extend.font-72;
+    width: 20%;
     color: $medium-grey;
     margin-bottom: 40px;
     line-height: 100%;
@@ -129,12 +130,12 @@ h3{
 }
 .btn{
     @extend.font-regular;
-    @extend.font-14;
+    @extend.font-18;
     @extend.cubicTransition;
     &.rounded-btn{
         border-radius: 50px;
         border: 1px solid $white;
-        padding: 10px 30px;
+        padding: 15px 60px;
         color: $red;
         text-transform: capitalize;
         background: transparent;
@@ -146,6 +147,7 @@ h3{
         background-color: $red;
         color: $white;
         border: 1px solid $red;
+        padding: 10px 25px;
         &:hover{
             background: transparent;
         }
@@ -156,7 +158,7 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     @extend.font-regular;
-    @extend.font-12;
+    @extend.font-16;
     display: block;
     opacity: 1;
     &:hover, &.active{
@@ -176,7 +178,8 @@ a{
 }
 .detailed-txt{
     @extend.font-regular;
-    @extend.font-14;
+    font-weight: 200;
+    @extend.font-18;
     color: $light-grey;
     margin-bottom: 20px;
     line-height: 120%;
@@ -198,13 +201,13 @@ a{
     background-image: linear-gradient(rgba($color: $black, $alpha: 0), rgba($color: $black, $alpha: 1));
 }
 .card{
-    padding: 10px;
+    padding: 20px;
     border: none;
     border-radius: 0;
     box-shadow: 0px 14px 20px 0px rgba($color: $light-grey, $alpha: 0.2);
     .card-img-top{
         width: 100%;
-        height: 200px;
+        height: 320px;
         object-fit: cover;
     }
     .card-body{
@@ -212,8 +215,8 @@ a{
     }
     .card-title{
         margin-bottom: 8px;
-        @extend.font-regular;
-        @extend.font-16;
+        @extend.font-bold;
+        @extend.font-20;
         color: $dark-grey;
         margin-bottom: 10px;
         line-height: 100%;
@@ -221,7 +224,7 @@ a{
     .btn{
         float: right;
         @extend.font-regular;
-        @extend.font-14;
+        @extend.font-18;
         color: $red;
         line-height: 120%;
         padding: 0;
@@ -240,7 +243,7 @@ header{
     width: calc(100% - 60px);
     margin: 30px;
     z-index: 100;
-    padding: 20px 0;
+    //padding: 20px 0;
 }
 nav{
     position: relative;
@@ -310,9 +313,9 @@ nav{
         //height: 0;
         //border-bottom: 100px solid $white;
         //border-right: 100px solid transparent;
-        bottom: -120px;
+        bottom: -1px;
         width: 100%;
-        height: 300px;
+        height: 200px;
         background-color: $white;
         clip-path: polygon(0 0, 0 100%, 100% 100%);
 
@@ -322,9 +325,11 @@ nav{
         margin-bottom: 0;
         .triangle-shape{
             bottom: inherit;
-            top: -275px;
+            //top: -275px;
             clip-path: polygon(100% 0, 0 0, 100% 100%);
-            height: 500px;
+            //height: 500px;
+            top: -1px;
+            height: 200px;
         }
         .illustration-info{
             left: 0;
@@ -337,17 +342,17 @@ nav{
         }
         .form-control{
             min-width: 280px;
-            @extend.font-12;
+            @extend.font-16;
             border: 1px solid $white;
         }
     }
 }
 .circle-shape{
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     position: absolute;
-    bottom: -100px;
-    right: 75px;
+    bottom: -200px;
+    right: 150px;
 
 }
 .wave-shape{
@@ -372,8 +377,8 @@ nav{
         img{
             top: 70%;
             left: 50%;
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             object-fit: contain;
             transform: translate(-50%, -70%);
         }
@@ -382,8 +387,8 @@ nav{
         img{
             top: 35%;
             left: 70%;
-            width: 90px;
-            height: 90px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             transform: translate(-50%, -50%);
         }
@@ -453,10 +458,10 @@ footer{
             content: "";
             position: absolute;
             top: 20%;
-            right: 0;
+            right: -3px;
             width: 1px;
             height: 60%;
-            background-color: #EDEDED;
+            background-color: $light-grey;
         }
         &:last-child(){
             &:after{
@@ -471,4 +476,7 @@ footer{
     height: 100%;
     top: 0;
     left: 0;
+}
+.form-subscribe{
+    height: 49px;
 }
